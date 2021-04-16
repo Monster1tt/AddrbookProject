@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                                http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.wler.addrbook</groupId>
+	<artifactId>addrbook-parent</artifactId>
+	<version>5.0.0</version>
+	<!-- 对于 Parent 项目的打包结果为 pom 形式 -->
+	<packaging>pom</packaging>
+
+	<!-- 配置项目使用 Spring Boot Starter Parent 作为父级依赖 [BEGIN] -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.9.RELEASE</version>
+	</parent>
+	<!-- 配置项目使用 Spring Boot Starter Parent 作为父级依赖 [END] -->
+
+	<dependencies>
+		<!-- 配置 Spring Boot Starter Web 依赖 [BEGIN] -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- 配置 Spring Boot Starter Web 依赖 [END] -->
+
+		<!-- 配置 Spring Boot Devtools 依赖 [BEGIN] -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		<!-- 配置 Spring Boot Devtools 依赖 [END] -->
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Hoxton.SR10</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- 配置 Spring Boot Maven Plugin 依赖 [BEGIN] -->
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<executions>
+						<execution>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- 配置 Spring Boot Maven Plugin 依赖 [END] -->
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
