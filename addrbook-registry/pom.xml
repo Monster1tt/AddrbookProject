@@ -6,6 +6,7 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>addrbook-registry</artifactId>
+	<packaging>jar</packaging>
 	<!-- 使用 Addrbook parent 作为项目父级依赖 [BEGIN] -->
 	<parent>
 		<groupId>com.wler.addrbook</groupId>
