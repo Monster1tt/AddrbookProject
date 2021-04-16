@@ -4,4 +4,4 @@ server:
 spring:
   ############ 配置项目应用名
   application:
-    name: could-
+    name: could-registry
