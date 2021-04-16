@@ -5,3 +5,19 @@ spring:
   ############ 配置项目应用名
   application:
     name: could-registry
+  ############ 启动 Spring Boot 对于 Bean 的重写机制
+  main:
+    allow-bean-definition-overriding: true
+############ 配置 Eureka Server 信息
+eureka:
+  ####### 配置主机名
+  instance:
+    hostname: localhost
+  client:
+    ######## 禁止本注册中心将自己的服务进行注册
+    register-with-eureka: false
+    ######## 配置本注册中心去其他注册中心发现服务
+    fetch-registry: false
+    ######### 暴露注册中心注册地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
