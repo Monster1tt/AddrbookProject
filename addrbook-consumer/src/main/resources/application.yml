@@ -1,0 +1,10 @@
+######## 配置项目启动端口号
+server:
+  port: 8888
+spring:
+  ######## 配置项目应用名
+  application:
+    name: addrbook-consumer
+  ######## 加载 commons 配置文件
+  profiles:
+    active: commons

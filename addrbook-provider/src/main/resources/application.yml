@@ -1,0 +1,32 @@
+######## 配置项目启动端口号
+server:
+  port: 8899
+spring:
+  ######## 配置项目应用名
+  application:
+    name: addrbook-provider
+  ######## 加载 commons 配置文件
+  profiles:
+    active: commons
+  ######## 配置 JDBC 信息
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/addrbook_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    ########## 配置 Druid 信息
+    druid:
+      min-idle: 3
+      max-active: 15
+      initial-size: 5
+      min-evictable-idle-time-millis: 30000
+      max-evictable-idle-time-millis: 60000
+########## 配置 MyBatis 信息
+mybatis:
+  ########## mapper 文件路径
+  mapper-locations: classpath:/mapper/*.Mapper.xml
+  ########## 实体类所在基础包
+  type-aliases-package: com.wler.addrbook.pojo.entity
+
+
